@@ -35,26 +35,17 @@
 					if(NetworkStatus.NOT_REACHABLE) document.location.href = 'senseconnexio.html';
 				
 				}
-				
-				
 			</script>
             <script>
             	$(function(){
             		$.ajaxPrefilter( "json script", function( options ) {
-						options.crossDomain = 'www.mtc.es';
+						options.crossDomain = 'http://www.mtc.es/1/';
 					});
-            		
-            		changeOrientation();
-					
+
             		$('.iframe').on('click',function(){
-            			if($('#iframe').css('display')=='none'){
-            			    $('#home').css('display','none');
-            			    $('#iframe').css('display','block');
-            			}
-            			$('#iframe > iframe').attr('src',$(this).attr('data-href'));
+            			$('#content').load($(this).attr('data-href'),{changeHash:false,transition: "flip"});
             		});
-            		
-            		window.onorientationchange = function () {
+            		/*window.onorientationchange = function () {
     				    //Need at least 800 milliseconds
     				    setTimeout(changeOrientation, 500);
     				}
@@ -62,7 +53,7 @@
             		function changeOrientation(){
             		    $('#iframe > iframe').attr('width',window.innerWidth);
     					$('#iframe > iframe').attr('height',window.innerHeight);
-            		}
+            		}*/
             	});
             </script>
         <!--//          -->
@@ -78,27 +69,26 @@
         </script>
     	
 		<div data-role="page" class="ui-responsive-panel" data-theme="b">
-			<div class="contingut">
-				<div data-role="header" data-position="fixed">
-					<h1>Auriculoterapia</h1>
-					<a href="#nav-panel" data-icon="bars" data-iconpos="notext">Índice</a>
-				</div><!-- /header -->
-				<div id="content" data-role="content" class="justifica">
-	            	<div id="slider"></div>
-	            	<h2>Bienvenidos a la primera app de auriculoterapia</h2>
-	            	<h3>En las redes sociales...</h3>
-	                <div class="ui-grid-b social">
-	                	<div class="ui-block-a"><p><a href="https://www.facebook.com/hitech.informatica"><i class="fa fa-facebook"></i> Facebook</a></p></div>
-	                    <div class="ui-block-b"><p><a href="#"><i class="fa fa-twitter"></i> Twitter</a></p></div>
-	                    <div class="ui-block-c"><p><a href="#"><i class="fa fa-youtube"></i> Youtube</a></p></div>
-	                </div>
-	
-				</div><!-- /content -->
-				
-			</div>
-			<div id="iframe">
-				<iframe></iframe>
-			</div>
+
+			<div data-role="header" data-position="fixed">
+				<h1>Auriculoterapia</h1>
+				<a href="#nav-panel" data-icon="bars" data-iconpos="notext">Índice</a>
+			</div><!-- /header -->
+			<div id="content" data-role="content" class="justifica">
+            	<div id="slider"></div>
+            	<h2>Bienvenidos a la primera app de auriculoterapia</h2>
+                
+
+
+            	<h3>En las redes sociales...</h3>
+                <div class="ui-grid-b social">
+                	<div class="ui-block-a"><p><a href="https://www.facebook.com/hitech.informatica"><i class="fa fa-facebook"></i> Facebook</a></p></div>
+                    <div class="ui-block-b"><p><a href="#"><i class="fa fa-twitter"></i> Twitter</a></p></div>
+                    <div class="ui-block-c"><p><a href="#"><i class="fa fa-youtube"></i> Youtube</a></p></div>
+                </div>
+
+			</div><!-- /content -->
+
 			<div class="footer">
 				<p>&copy; 2014 HiTech Informàtica.<br/>Programación y diseño: <a href="//www.hitech-informatica.es" target="_blank">HiTech Informàtica</a></p>
 			</div><!-- /jqm-footer -->
