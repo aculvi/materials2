@@ -35,6 +35,8 @@
 					if(NetworkStatus.NOT_REACHABLE) document.location.href = 'senseconnexio.html';
 				
 				}
+				
+				
 			</script>
             <script>
             	$(function(){
@@ -42,8 +44,7 @@
 						options.crossDomain = 'www.mtc.es';
 					});
             		
-					$('#iframe > iframe').attr('width',window.innerWidth);
-					$('#iframe > iframe').attr('height',window.innerHeight);
+            		changeOrientation();
 					
             		$('.iframe').on('click',function(){
             			if($('#iframe').css('display')=='none'){
@@ -52,6 +53,16 @@
             			}
             			$('#iframe > iframe').attr('src',$(this).attr('data-href'));
             		});
+            		
+            		window.onorientationchange = function () {
+    				    //Need at least 800 milliseconds
+    				    setTimeout(changeOrientation, 500);
+    				}
+            		
+            		function changeOrientation(){
+            		    $('#iframe > iframe').attr('width',window.innerWidth);
+    					$('#iframe > iframe').attr('height',window.innerHeight);
+            		}
             	});
             </script>
         <!--//          -->
