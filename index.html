@@ -20,38 +20,38 @@
             <script src="js/jquery.min.js"></script>
             <script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
 			<script>
-			 document.addEventListener("deviceready", onDeviceReady, false);
+				document.addEventListener("deviceready", onDeviceReady, false);
 
 				// PhoneGap is loaded and it is now safe to make calls PhoneGap methods
-				//
 				function onDeviceReady() {
 					navigator.network.isReachable("mtc.es", reachableCallback, {});
 				}
-				
-				function reachableCallback(reachability) {
-        // There is no consistency on the format of reachability
-				var networkState = reachability.code || reachability;
-				
-				if(NetworkStatus.NOT_REACHABLE) location.href = 'senseconnexio.html';
-				
 
-			}
+				function reachableCallback(reachability) {
+
+				// There is no consistency on the format of reachability
+					var networkState = reachability.code || reachability;
+				
+					if(NetworkStatus.NOT_REACHABLE) document.location.href = 'senseconnexio.html';
+				
+				}
 			</script>
             <script>
             	$(function(){
             		$.ajaxPrefilter( "json script", function( options ) {
 						options.crossDomain = 'www.mtc.es';
 					});
+            		
+					$('#iframe > iframe').attr('width',window.innerWidth);
+					$('#iframe > iframe').attr('height',window.innerHeight);
 					
             		$('.iframe').on('click',function(){
-            			alert($(this).attr('data-href'))
-            			$('#content').load($(this).attr('data-href'),{changeHash:false,transition: "flip"});
+            			if($('#iframe').css('display')=='none'){
+            			    $('#home').css('display','none');
+            			    $('#iframe').css('display','block');
+            			}
+            			$('#iframe > iframe').attr('src',$(this).attr('data-href'));
             		});
-            		/*$('#pageId').live('pagecreate',function(event){
-					    $("#login").bind("click", function(event) {
-					        $.mobile.changePage( "connexion.html",  { transition: "flip"});
-					    });  
-					});*/
             	});
             </script>
         <!--//          -->
@@ -67,26 +67,27 @@
         </script>
     	
 		<div data-role="page" class="ui-responsive-panel" data-theme="b">
-
-			<div data-role="header" data-position="fixed">
-				<h1>Auriculoterapia</h1>
-				<a href="#nav-panel" data-icon="bars" data-iconpos="notext">Índice</a>
-			</div><!-- /header -->
-			<div id="content" data-role="content" class="justifica">
-            	<div id="slider"></div>
-            	<h2>Bienvenidos a la primera app de auriculoterapia</h2>
-                
-
-
-            	<h3>En las redes sociales...</h3>
-                <div class="ui-grid-b social">
-                	<div class="ui-block-a"><p><a href="https://www.facebook.com/hitech.informatica"><i class="fa fa-facebook"></i> Facebook</a></p></div>
-                    <div class="ui-block-b"><p><a href="#"><i class="fa fa-twitter"></i> Twitter</a></p></div>
-                    <div class="ui-block-c"><p><a href="#"><i class="fa fa-youtube"></i> Youtube</a></p></div>
-                </div>
-
-			</div><!-- /content -->
-
+			<div class="contingut">
+				<div data-role="header" data-position="fixed">
+					<h1>Auriculoterapia</h1>
+					<a href="#nav-panel" data-icon="bars" data-iconpos="notext">Índice</a>
+				</div><!-- /header -->
+				<div id="content" data-role="content" class="justifica">
+	            	<div id="slider"></div>
+	            	<h2>Bienvenidos a la primera app de auriculoterapia</h2>
+	            	<h3>En las redes sociales...</h3>
+	                <div class="ui-grid-b social">
+	                	<div class="ui-block-a"><p><a href="https://www.facebook.com/hitech.informatica"><i class="fa fa-facebook"></i> Facebook</a></p></div>
+	                    <div class="ui-block-b"><p><a href="#"><i class="fa fa-twitter"></i> Twitter</a></p></div>
+	                    <div class="ui-block-c"><p><a href="#"><i class="fa fa-youtube"></i> Youtube</a></p></div>
+	                </div>
+	
+				</div><!-- /content -->
+				
+			</div>
+			<div id="iframe">
+				<iframe></iframe>
+			</div>
 			<div class="footer">
 				<p>&copy; 2014 HiTech Informàtica.<br/>Programación y diseño: <a href="//www.hitech-informatica.es" target="_blank">HiTech Informàtica</a></p>
 			</div><!-- /jqm-footer -->
