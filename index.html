@@ -42,10 +42,12 @@
     				}
             		
             		function changeOrientation(){
-            		    f=window.offsetWidth;
+            		    f=window.innerWidth;
             			console.log(f);
             			h=window.innerHeight;
             			console.log(h);
+            			windowWidth = window.innerWidth;
+            	        windowHeight = window.innerHeight;
             		    $('#iframe > iframe').attr('width',f+'px');
     					$('#iframe > iframe').attr('height',h+'px');
             		}
