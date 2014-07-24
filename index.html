@@ -23,34 +23,9 @@
             <script>
             	$(function(){
             		$.ajaxPrefilter( "json script", function( options ) {
-						options.crossDomain = 'http://www.mtc.es/1/';
+						options.crossDomain = 'http://www.mtc.es/';
 					});
 
-            		$('.iframe').on('click',function(){
-            		    if($('#iframe').css('display')=='none'){
-            		        $('#contenedor').css('display','none');
-            		        $('#iframe').css('display','block');
-            		    }
-            			$('#iframe > iframe').attr('src',$(this).attr('data-href'));
-            		});
-            		
-            		changeOrientation();
-            		
-            		window.onorientationchange = function () {
-    				    //Need at least 800 milliseconds
-    				    setTimeout(changeOrientation, 800);
-    				}
-            		
-            		function changeOrientation(){
-            		    f=window.innerWidth;
-            			console.log(f);
-            			h=window.innerHeight;
-            			console.log(h);
-            			windowWidth = window.innerWidth;
-            	        windowHeight = window.innerHeight;
-            		    $('#iframe > iframe').attr('width',f+'px');
-    					$('#iframe > iframe').attr('height',h+'px');
-            		}
             	});
             </script>
 	</head>
@@ -68,21 +43,50 @@
 
 			<div data-role="header" id="header" data-position="fixed">
 				<h1>Auriculoterapia</h1>
-				<a href="#nav-panel" data-icon="bars" data-iconpos="notext">Índice</a>
+				<!-- a href="#nav-panel" data-icon="bars" data-iconpos="notext">Índice</a  -->
 			</div><!-- /header -->
+			
 			<div data-role="content" class="justifica">
 			
 				<div id="contenedor">
 				
 	            	<div id="slider"></div>
 	            	<h2>Bienvenidos a la primera app de auriculoterapia</h2>
-	            	
+	            	<div class="ui-grid-b">
+
+	            		<div class="ui-block-a">
+	            			<a href="http://www.mtc.es/1/">Capitulo 1 mtc</a>
+	            		</div>
+	            		<div class="ui-block-b">
+	            			<a href="http://www.hitech-informatica.es/1/index.html">Capitulo 1</a>
+	            		</div>
+	            		<div class="ui-block-c">
+	            			<a href="http://www.mtc.es/1/">Capitulo 1 mtc</a>
+	            		</div>
+	            		
+	            		<div class="ui-block-a">
+	            			<a href="http://www.mtc.es/1/">Capitulo 1 mtc</a>
+	            		</div>
+	            		<div class="ui-block-b">
+	            			<a href="http://www.hitech-informatica.es/1/index.html">Capitulo 1</a>
+	            		</div>
+	            		<div class="ui-block-c">
+	            			<a href="http://www.mtc.es/1/">Capitulo 1 mtc</a>
+	            		</div>
+	            		
+	            		<div class="ui-block-a">
+	            			<a href="http://www.mtc.es/1/">Capitulo 1 mtc</a>
+	            		</div>
+	            		<div class="ui-block-b">
+	            			<a href="http://www.hitech-informatica.es/1/index.html">Capitulo 1</a>
+	            		</div>
+	            		<div class="ui-block-c">
+	            			<a href="http://www.mtc.es/1/">Capitulo 1 mtc</a>
+	            		</div>
+	            		
+	            	</div>
                 </div>
                 
-				<div id="iframe" style="display:none;">
-					<iframe></iframe>
-				</div>
-
             	<h3>En las redes sociales...</h3>
                 <div class="ui-grid-b social">
                 	<div class="ui-block-a"><p><a href="https://www.facebook.com/hitech.informatica"><i class="fa fa-facebook"></i> Facebook</a></p></div>
@@ -110,16 +114,13 @@
 							<a href="index.html">Inicio</a>
 						</li>
                         <li>
-							<a class="iframe" data-href="http://www.hitech-informatica.es/1/index.html">Capitulo 1</a>
+							<a href="http://www.hitech-informatica.es/1/index.html">Capitulo 1</a>
 						</li>
                         <li>
-							<a class="iframe" data-href="http://www.mtc.es/1/">Capitulo 1 mtc</a>
+							<a href="http://www.mtc.es/1/">Capitulo 1 mtc</a>
 						</li>
                         <li>
-							<a class="iframe" data-href="http://www.hitech-informatica.es/1/index.html">Capitulo 1 E</a>
-						</li>
-                        <li>
-							<a href="contacto.html">Contacto</a>
+							<a href="http://www.hitech-informatica.es/1/index.html">Capitulo 1 E</a>
 						</li>
 					</ul>
 
