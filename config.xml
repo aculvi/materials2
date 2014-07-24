@@ -63,8 +63,7 @@
 
 	<gap:plugin name="org.apache.cordova.device"  />
 	<gap:plugin name="org.apache.cordova.network-information" />
-	<gap:plugin name="com.rjfun.cordova.plugin.lowlatencyaudio" />
-
+	<!-- gap:plugin name="com.rjfun.cordova.plugin.lowlatencyaudio" / -->
 
 	
 <!--
@@ -118,7 +117,7 @@
 	</gap:config-file>
 -->
 
-    <access origin="*"/> <!-- allow local pages -->
+    <access origin="http://www.mtc.es"/> <!-- allow local pages -->
 <!--
 	<access origin="http://127.0.0.1*"/> 
     <access origin="http://jquery.com" subdomains="true"/>
