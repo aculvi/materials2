@@ -110,6 +110,7 @@
 			/*document.addEventListener("offline", this.onReceivedOffline, false);
 			document.addEventListener("online", this.onReceivedOnline, false);*/
 			document.addEventListener("offline", onOffline, false);
+			appInBrowser.addEventListener("offline", onOffline, false);
 			function onOffline()
 			{
 			    window.location = "senseconnexio.html";
