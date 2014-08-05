@@ -31,7 +31,7 @@
 }
 
 #NoConnectSplash {
-	background:#FFF url(../img/nonetconn.png) top center fixed;
+	background:#000 url('../img/nonetconn.png') top center fixed;
 	background-size:auto 100%;
 }
 
