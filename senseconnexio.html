@@ -12,9 +12,15 @@
 	<body style="margin:0px;padding:0px;">
         <div id="NoConnectSplash"><p>&nbsp;</p></div>
         <script type="text/javascript">
-			$(document).ready(function(){
-				$("#NoConnectSplash").css("height",$(window).height());
-				app.initialize();
+        	app.initialize();
+        	document.addEventListener("online", onOnline);
+        	
+			function onOnline()
+			{
+			    window.location = "index.html";
+			}
+        	$(document).ready(function(){
+				$("#NoConnectSplash").css("height",$(window).innerHeight());	
 			});
         </script>
 	</body>
