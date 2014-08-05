@@ -35,7 +35,7 @@
 						<p>This is good for tight spaces.</p>
 						<div class="ui-grid-b">
 					    	<div class="ui-block-a">
-					    		<a href="#" class="ui-btn ui-shadow"  onclick="window.open('http://www.mtc.es/1/','_self','location=no','closebuttoncaption=Return');">Ver</a>
+					    		<a onclick="$.mobile.changePage('http://www.mtc.es/1/',{allowSamePageTransition:true,reloadPage:false,changeHash:true,transition:'slide'});" class="ui-btn ui-shadow">Ver</a>
 					    	</div>
 					    </div>
 					</div>
@@ -110,7 +110,6 @@
 			/*document.addEventListener("offline", this.onReceivedOffline, false);
 			document.addEventListener("online", this.onReceivedOnline, false);*/
 			document.addEventListener("offline", onOffline, false);
-			appInBrowser.addEventListener("offline", onOffline, false);
 			function onOffline()
 			{
 			    window.location = "senseconnexio.html";
@@ -121,5 +120,35 @@
 			    window.location = "index.html";
 			}*/
         	</script>
+        <script type="text/javascript">
+        $(function(){
+    		$.ajaxPrefilter( "json script", function( options ) {
+				options.crossDomain = 'http://www.mtc.es/';
+			});
+
+    		$('.iframe').on('click',function(){
+    		    alert($(this).attr('href'))
+    		    
+    		});
+    		
+    		changeOrientation();
+    		
+    		window.onorientationchange = function () {
+			    //Need at least 800 milliseconds
+			    setTimeout(changeOrientation, 800);
+			}
+    		
+    		function changeOrientation(){
+    		    f=window.innerWidth;
+    			console.log(f);
+    			h=window.innerHeight;
+    			console.log(h);
+    			windowWidth = window.innerWidth;
+    	        windowHeight = window.innerHeight;
+    		    $('#iframe > iframe').attr('width',f+'px');
+				$('#iframe > iframe').attr('height',h+'px');
+    		}
+    	});
+        </script>
 	</body>
 </html>
