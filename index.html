@@ -116,6 +116,13 @@
 		<script type="text/javascript" charset="utf-8" src="js/push.js"></script> <!-- Funcions PushWoosh -->
 		<script type="text/javascript">
 			app.initialize();
-        </script>
+			document.addEventListener("offline", this.onReceivedOffline, false);
+			document.addEventListener("online", this.onReceivedOnline, false);
+			document.addEventListener("offline", onOffline, false);
+			function onOffline()
+			{
+			    window.location = "senseconnexio.html";
+			}
+        	</script>
 	</body>
 </html>
