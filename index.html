@@ -88,7 +88,7 @@
 					    <div class="ui-grid-b">
 					    	<div class="ui-block-a">
 
-					    		<a href="#" class="ui-btn ui-shadow"  onclick="window.open('http://www.mtc.es/1/','_self','location=no','closebuttoncaption=Return');">Ver</a>
+					    		<a href="#" class="ui-btn ui-shadow"  onclick="window.open((navigator.userAgent.indexOf('Android') != -1 ? 'file:///android_asset/www/' : '') + encodeURI('http://www.mtc.es/1/'), '_blank', 'location=no,toolbar=yes,enableViewportScale=yes,transitionstyle=crossdissolve');">Ver</a>
 
 					    	</div>
 					    </div>
@@ -118,7 +118,7 @@
 			app.initialize();
 			/*document.addEventListener("offline", this.onReceivedOffline, false);
 			document.addEventListener("online", this.onReceivedOnline, false);*/
-			document.addEventListener("offline", onOffline, false);
+			/*document.addEventListener("offline", onOffline, false);
 			function onOffline()
 			{
 			    window.location = "senseconnexio.html";
@@ -127,7 +127,7 @@
 			function onOnline()
 			{
 			    window.location = "index.html";
-			}
+			}*/
         	</script>
 	</body>
 </html>
