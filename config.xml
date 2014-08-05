@@ -65,14 +65,15 @@
 	<gap:plugin name="org.apache.cordova.device"  />
 	<gap:plugin name="org.apache.cordova.network-information" />
 	<gap:plugin name="org.apache.cordova.inappbrowser" />
-	<gap:plugin name="org.apache.cordova.geolocation" />	<gap:plugin name="com.pushwoosh.plugins.pushwoosh" />
+	<gap:plugin name="com.pushwoosh.plugins.pushwoosh" />
 	<plugin name="PushNotification" value="com.pushwoosh.plugin.pushnotifications.PushNotifications" onload="true"/>
+    
     <access origin="https://cp.pushwoosh.com" subdomains="true" />
 
 	<feature name="http://api.phonegap.com/1.0/device" />
 	<feature name="http://api.phonegap.com/1.0/network"/>
-	<feature name="http://api.phonegap.com/1.0/media"/>
-	<feature name="http://api.phonegap.com/1.0/file"/>
+	<!--feature name="http://api.phonegap.com/1.0/media"/-->
+	<!--feature name="http://api.phonegap.com/1.0/file"/-->
 
     <access origin="*"/> 
 </widget>
