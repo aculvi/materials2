@@ -86,7 +86,6 @@
 					    </div>
 					</div>
 				</div>
-				<div id="iframe"></div>
             	<h3>En las redes sociales...</h3>
                 <div class="ui-grid-b social">
                 	<div class="ui-block-a"><p><a href="https://www.facebook.com/hitech.informatica"><i class="fa fa-facebook"></i> Facebook</a></p></div>
@@ -129,7 +128,7 @@
 
     		$('.iframe').on('click',function(){
     		    alert($(this).attr('data-href'))
-    		    $('#content').load($(this).attr('data-href'),{changeHash:false,transition: "flip"});
+    		    $('#contingut').load($(this).attr('data-href'),{changeHash:false,transition: "flip"});
     		});
     		
     		changeOrientation();
